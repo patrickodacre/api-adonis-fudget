@@ -8,9 +8,10 @@ class TransactionSchema extends Schema {
       table.increments()
       table.timestamps()
       table.date('date')
-      table.decimal('amount', 10, 2)
-      table.boolean('expense').defaultTo(true)
-      table.boolean('actual').defaultTo(true)
+      table.decimal('actual_in', 10, 2).defaultTo(0)
+      table.decimal('expected_in', 10, 2).defaultTo(0)
+      table.decimal('actual_out', 10, 2).defaultTo(0)
+      table.decimal('expected_out', 10, 2).defaultTo(0)
       table.string('description')
       table.integer('transaction_group_id').unsigned()
       table
