@@ -24,7 +24,10 @@ class AccountController {
   }
 
   async show({ request, response, params: { id } }) {
-    const account = await Account.find(id)
+    const account = await Account.query()
+      .where('id', id)
+      .with('groups')
+      .first()
 
     if (account) {
       return response.status(200).json({

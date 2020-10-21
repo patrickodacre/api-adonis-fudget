@@ -26,3 +26,19 @@ Route.group(() => {
   Route.patch('accounts/:id', 'AccountController.update')
   Route.delete('accounts/:id', 'AccountController.destroy')
 }).prefix('api/v1')
+
+Route.group(() => {
+  Route.get('transaction-groups', 'TransactionGroupController.index')
+  Route.post('transaction-groups', 'TransactionGroupController.store')
+  Route.get('transaction-groups/:id', 'TransactionGroupController.show')
+  Route.patch('transaction-groups/:id', 'TransactionGroupController.update')
+  Route.delete('transaction-groups/:id', 'TransactionGroupController.destroy')
+}).prefix('api/v1')
+
+Route.group(() => {
+  Route.get('transactions', 'TransactionController.index')
+  Route.post('transactions', 'TransactionController.store')
+  Route.get('transactions/:id', 'TransactionController.show')
+  Route.patch('transactions/:id', 'TransactionController.update')
+  Route.delete('transactions/:id', 'TransactionController.destroy')
+}).prefix('api/v1')
